@@ -1,0 +1,18 @@
+<h2>Assign Task</h2>
+<form method="POST">
+  Title: <input name="title"><br>
+  Description: <input name="description"><br>
+  Deadline: <input type="date" name="deadline"><br>
+  Status: <select name="status">
+    <option value="Pending">Pending</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+  </select><br>
+  Assign to:
+  <select name="employee_id">
+    {% for emp in employees %}
+      <option value="{{ emp.id }}">{{ emp.name }}</option>
+    {% endfor %}
+  </select><br>
+  <input type="submit" value="Assign Task">
+</form>
